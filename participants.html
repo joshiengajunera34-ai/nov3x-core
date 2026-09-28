@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NØV3X | Participants</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #050008;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            height: 70px;
+            border-bottom: 1px solid #24102d;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            background: #050008;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #888;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+
+        /* PARTICIPANTS */
+
+        .participants-section {
+            max-width: 960px;
+            margin: 70px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            margin-bottom: 30px;
+        }
+
+        .section-header h1 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .section-header p {
+            color: #777;
+            font-size: 14px;
+        }
+
+
+        /* PLAYER CARD */
+
+        .participants-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .participant-card {
+            display: grid;
+
+            grid-template-columns:
+                70px
+                1fr
+                auto
+                auto;
+
+            align-items: center;
+
+            gap: 20px;
+
+            padding: 22px;
+
+            background: #08000d;
+
+            border: 1px solid #24102d;
+
+            transition: 0.2s;
+        }
+
+        .participant-card:hover {
+            border-color: #71358c;
+            transform: translateY(-2px);
+        }
+
+
+        .participant-number {
+            color: #8d4baa;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+
+        .participant-info h3 {
+            font-size: 17px;
+            margin-bottom: 6px;
+        }
+
+        .participant-info p {
+            color: #777;
+            font-size: 13px;
+        }
+
+
+        .participant-details {
+            display: flex;
+            gap: 18px;
+
+            color: #999;
+
+            font-size: 11px;
+        }
+
+
+        .participant-status {
+            border: 1px solid #633775;
+
+            color: #a974bd;
+
+            padding: 8px 14px;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* EMPTY */
+
+        .empty {
+            padding: 40px;
+
+            text-align: center;
+
+            color: #666;
+
+            border: 1px solid #24102d;
+
+            background: #08000d;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #24102d;
+
+            padding: 24px;
+
+            text-align: center;
+
+            color: #555;
+
+            font-size: 12px;
+
+            margin-top: 100px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                padding: 0 20px;
+            }
+
+            nav {
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 10px;
+            }
+
+            .participant-card {
+                grid-template-columns: 
