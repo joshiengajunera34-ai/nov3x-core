@@ -1,285 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NØV3X CORE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NØV3X CORE</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #100018;
-            color: white;
-        }
+body {
+    background: #100018;
+    color: white;
+}
 
-        /* NAVBAR */
-        nav {
-            height: 75px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 8%;
-            border-bottom: 1px solid #2d1738;
-            background: #0d0013;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+/* NAVBAR */
+nav {
+    height: 75px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0b0010;
+    border-bottom: 1px solid #32183e;
+}
 
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-            letter-spacing: 3px;
-        }
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
 
-        nav a {
-            color: #aaa;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 14px;
-            transition: 0.3s;
-        }
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
 
-        nav a:hover {
-            color: white;
-        }
+nav a:hover {
+    color: white;
+}
 
-        /* HERO */
-        .hero {
-            min-height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 60px 20px;
-        }
+/* HERO */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
-        .hero h1 {
-            font-size: 60px;
-            letter-spacing: 8px;
-            margin-bottom: 15px;
-        }
+.hero h1 {
+    font-size: 60px;
+    letter-spacing: 8px;
+}
 
-        .hero p {
-            color: #aaa;
-            font-size: 18px;
-        }
+.hero p {
+    color: #999;
+    margin-top: 15px;
+}
 
-        .button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 14px 28px;
-            border: 1px solid #9b4dcc;
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+/* SECTIONS */
+section {
+    padding: 80px 8%;
+    text-align: center;
+}
 
-        .button:hover {
-            background: #9b4dcc;
-        }
+.title {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
 
-        /* CORE */
-        section {
-            padding: 80px 8%;
-            text-align: center;
-        }
+.subtitle {
+    color: #888;
+    margin-bottom: 40px;
+}
 
-        .section-title {
-            font-size: 38px;
-            margin-bottom: 10px;
-        }
+/* TEAM */
+.players {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
-        .section-subtitle {
-            color: #888;
-            margin-bottom: 40px;
-        }
+.player {
+    width: 250px;
+    padding: 35px 20px;
+    background: #15001d;
+    border: 1px solid #32183e;
+}
 
-        .players {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+.player h3 {
+    margin-bottom: 10px;
+}
 
-        .player {
-            width: 250px;
-            padding: 35px 20px;
-            border: 1px solid #32183e;
-            background: #15001d;
-            transition: 0.3s;
-        }
+.player p {
+    color: #999;
+}
 
-        .player:hover {
-            transform: translateY(-5px);
-            border-color: #9b4dcc;
-        }
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 28px;
+    border: 1px solid #9b4dcc;
+    color: white;
+    text-decoration: none;
+}
 
-        .player h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
+.button:hover {
+    background: #9b4dcc;
+}
 
-        .player p {
-            color: #999;
-        }
+/* SCRIMS */
+#scrims {
+    background: #0b0010;
+}
 
-        /* SCRIMS */
-        .scrims {
-            background: #0d0013;
-        }
+.scrim-container {
+    max-width: 850px;
+    margin: auto;
+}
 
-        .scrim-box {
-            max-width: 700px;
-            margin: auto;
-            padding: 40px;
-            border: 1px solid #32183e;
-            background: #15001d;
-        }
+.scrim-card {
+    background: #15001d;
+    border: 1px solid #3a1947;
+    padding: 40px 25px;
+}
 
-        .scrim-box h3 {
-            font-size: 25px;
-            margin-bottom: 15px;
-        }
+.scrim-card h3 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
 
-        .scrim-box p {
-            color: #999;
-            line-height: 1.7;
-        }
+.scrim-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
 
-        /* CONTACT */
-        .contact {
-            padding-bottom: 100px;
-        }
+.info-box {
+    padding: 20px;
+    border: 1px solid #32183e;
+    background: #100018;
+}
 
-        footer {
-            border-top: 1px solid #2d1738;
-            text-align: center;
-            padding: 25px;
-            color: #666;
-        }
+.info-box span {
+    display: block;
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
 
-        @media (max-width: 700px) {
-            nav {
-                padding: 0 5%;
-            }
+.info-box strong {
+    font-size: 17px;
+}
 
-            nav a {
-                margin-left: 10px;
-                font-size: 11px;
-            }
+.rules {
+    margin-top: 25px;
+    padding: 25px;
+    text-align: left;
+    border: 1px solid #32183e;
+}
 
-            .hero h1 {
-                font-size: 40px;
-            }
-        }
-    </style>
+.rules h4 {
+    margin-bottom: 15px;
+}
+
+.rules p {
+    color: #999;
+    line-height: 1.8;
+}
+
+/* CONTACT */
+.contact {
+    padding-bottom: 100px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #666;
+    border-top: 1px solid #32183e;
+}
+
+/* PHONE */
+@media (max-width: 600px) {
+
+    nav {
+        padding: 0 5%;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 11px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .scrim-info {
+        grid-template-columns: 1fr;
+    }
+
+    .player {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="logo">NØV3X</div>
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">NØV3X</div>
 
-        <div>
-            <a href="#home">HOME</a>
-            <a href="#team">TEAM</a>
-            <a href="#scrims">SCRIMS</a>
-        </div>
-    </nav>
-
-
-    <!-- HOME -->
-    <section class="hero" id="home">
-        <h1>NØV3X</h1>
-        <p>ONE SQUAD. ONE FATE.</p>
-
-        <a href="#team" class="button">ENTER THE CORE</a>
-    </section>
+    <div>
+        <a href="#home">HOME</a>
+        <a href="#team">TEAM</a>
+        <a href="#scrims">SCRIMS</a>
+    </div>
+</nav>
 
 
-    <!-- TEAM -->
-    <section id="team">
+<!-- HOME -->
+<section class="hero" id="home">
+    <h1>NØV3X</h1>
+    <p>ONE SQUAD. ONE FATE.</p>
 
-        <h2 class="section-title">THE CORE</h2>
-        <p class="section-subtitle">Meet the squad.</p>
+    <a href="#team" class="button">
+        ENTER THE CORE
+    </a>
+</section>
 
-        <div class="players">
 
-            <!-- JETHRO -->
-            <div class="player">
-                <h3>JETHRO</h3>
-                <p>ASSAULT</p>
-            </div>
+<!-- TEAM -->
+<section id="team">
 
-            <!-- JOSHIEN -->
-            <div class="player">
-                <h3>JOSHIEN</h3>
-                <p>TEAM CAPTAIN</p>
-            </div>
+    <h2 class="title">THE CORE</h2>
+    <p class="subtitle">Meet the squad.</p>
 
-            <!-- JURIST -->
-            <div class="player">
-                <h3>JURIST</h3>
-                <p>SUPPORT</p>
-            </div>
+    <div class="players">
 
+        <div class="player">
+            <h3>JETHRO</h3>
+            <p>ASSAULT</p>
         </div>
 
-        <a href="players.html" class="button">VIEW FULL TEAM</a>
+        <div class="player">
+            <h3>JOSHIEN</h3>
+            <p>TEAM CAPTAIN</p>
+        </div>
 
-    </section>
+        <div class="player">
+            <h3>JURIST</h3>
+            <p>SUPPORT</p>
+        </div>
+
+    </div>
+
+    <a href="players.html" class="button">
+        VIEW FULL TEAM
+    </a>
+
+</section>
 
 
-    <!-- SCRIMS -->
-    <section id="scrims" class="scrims">
+<!-- SCRIMS -->
+<section id="scrims">
 
-        <h2 class="section-title">SCRIMS</h2>
-        <p class="section-subtitle">NØV3X competitive operations.</p>
+    <h2 class="title">SCRIMS</h2>
 
-        <div class="scrim-box">
+    <p class="subtitle">
+        NØV3X COMPETITIVE HUB
+    </p>
+
+    <div class="scrim-container">
+
+        <div class="scrim-card">
+
             <h3>8PM SCRIMMAGE</h3>
 
-            <p>
-                One squad. One fate.<br>
-                Compete. Improve. Dominate.
-            </p>
+            <div class="scrim-info">
 
-            <a href="#" class="button">SCRIM INFORMATION</a>
+                <div class="info-box">
+                    <span>DATE</span>
+                    <strong>09/26/2026</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>OPEN ROOM</span>
+                    <strong>7:55 PM</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>GIVING SLOT</span>
+                    <strong>8:05 PM</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>ROOM START</span>
+                    <strong>8:10 PM</strong>
+                </div>
+
+            </div>
+
+            <div class="rules">
+
+                <h4>SCRIM INFORMATION</h4>
+
+                <p>
+                    • Be ready before room opening.<br>
+                    • Follow the host's instructions.<br>
+                    • No unnecessary delays.<br>
+                    • Respect all participating teams.<br>
+                    • Good luck and have fun.
+                </p>
+
+            </div>
+
+            <a href="#" class="button">
+                SCRIM INFORMATION
+            </a>
+
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- CONTACT -->
-    <section class="contact">
+<!-- CONTACT -->
+<section class="contact">
 
-        <h2 class="section-title">JOIN NØV3X</h2>
+    <h2 class="title">JOIN NØV3X</h2>
 
-        <p class="section-subtitle">
-            Ready to enter the next level?
-        </p>
+    <p class="subtitle">
+        Ready to enter the next level?
+    </p>
 
-        <a href="mailto:YOUR-EMAIL@gmail.com" class="button">
-            CONTACT US
-        </a>
+    <a href="mailto:YOUR-EMAIL@gmail.com" class="button">
+        CONTACT US
+    </a>
 
-    </section>
+</section>
 
 
-    <!-- FOOTER -->
-    <footer>
-        © 2026 NØV3X CORE
-    </footer>
+<footer>
+    © 2026 NØV3X CORE
+</footer>
 
 </body>
 </html>
