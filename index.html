@@ -1,375 +1,278 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>NØV3X CORE</title>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: #08000f;
-    color: white;
-    min-height: 100vh;
-}
-
-/* NAVBAR */
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(8, 0, 15, 0.95);
-    border-bottom: 1px solid #24112f;
-    padding: 22px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 25px;
-    font-weight: bold;
-    letter-spacing: 3px;
-}
-
-nav {
-    display: flex;
-    gap: 25px;
-}
-
-nav a {
-    color: #aaa;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: white;
-}
-
-/* HERO */
-.hero {
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 80px 20px;
-    background:
-        radial-gradient(circle at center, #260035 0%, #08000f 65%);
-}
-
-.hero h1 {
-    font-size: clamp(50px, 10vw, 100px);
-    letter-spacing: 12px;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    color: #999;
-    font-size: 17px;
-    margin-bottom: 35px;
-}
-
-.button {
-    display: inline-block;
-    padding: 14px 30px;
-    border: 1px solid #9d42ff;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-    background: transparent;
-}
-
-.button:hover {
-    background: #9d42ff;
-    box-shadow: 0 0 25px rgba(157, 66, 255, 0.35);
-}
-
-/* SECTIONS */
-section {
-    padding: 90px 7%;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 38px;
-    margin-bottom: 12px;
-}
-
-.section-subtitle {
-    text-align: center;
-    color: #888;
-    margin-bottom: 40px;
-}
-
-/* CORE */
-.core-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 950px;
-    margin: auto;
-}
-
-.player-card {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid #281537;
-    padding: 40px 20px;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.player-card:hover {
-    transform: translateY(-5px);
-    border-color: #9d42ff;
-}
-
-.player-card h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.player-card p {
-    color: #888;
-    font-size: 14px;
-}
-
-.full-team {
-    text-align: center;
-    margin-top: 35px;
-}
-
-/* SCRIMS */
-.scrim-section {
-    background: #0c0015;
-}
-
-.scrim-card {
-    max-width: 850px;
-    margin: auto;
-    border: 1px solid #281537;
-    padding: 45px;
-    text-align: center;
-}
-
-.scrim-card h3 {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.scrim-card p {
-    color: #888;
-    margin-bottom: 30px;
-}
-
-/* TRYOUT HUB */
-.tryout-section {
-    text-align: center;
-}
-
-.tryout-box {
-    max-width: 850px;
-    margin: auto;
-    border: 1px solid #281537;
-    padding: 55px 30px;
-    background: rgba(255,255,255,0.02);
-}
-
-.tryout-box h3 {
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-
-.tryout-box p {
-    color: #888;
-    margin-bottom: 30px;
-}
-
-/* FOOTER */
-footer {
-    border-top: 1px solid #24112f;
-    padding: 30px;
-    text-align: center;
-    color: #555;
-    font-size: 14px;
-}
-
-/* MOBILE */
-@media (max-width: 700px) {
-
-    header {
-        padding: 18px 5%;
-    }
-
-    nav {
-        gap: 12px;
-    }
-
-    nav a {
-        font-size: 11px;
-    }
-
-    .hero h1 {
-        letter-spacing: 6px;
-    }
-
-    .core-container {
-        grid-template-columns: 1fr;
-    }
-
-    section {
-        padding: 70px 5%;
-    }
-
-    .scrim-card,
-    .tryout-box {
-        padding: 35px 20px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<!-- NAVBAR -->
-<header>
-
-    <div class="logo">NØV3X</div>
-
-    <nav>
-        <a href="#home">HOME</a>
-        <a href="#team">TEAM</a>
-        <a href="#scrims">SCRIMS</a>
-        <a href="#tryouts">TRYOUTS</a>
-    </nav>
-
-</header>
-
-
-<!-- HOME -->
-<section class="hero" id="home">
-
-    <h1>NØV3X</h1>
-
-    <p>ONE SQUAD. ONE FATE.</p>
-
-    <a href="#team" class="button">
-        ENTER THE CORE
-    </a>
-
-</section>
-
-
-<!-- THE CORE -->
-<section id="team">
-
-    <h2 class="section-title">THE CORE</h2>
-
-    <p class="section-subtitle">
-        Meet the squad.
-    </p>
-
-    <div class="core-container">
-
-        <div class="player-card">
-            <h3>JETHRO</h3>
-            <p>ASSAULT</p>
-        </div>
-
-        <div class="player-card">
-            <h3>JOSHIEN</h3>
-            <p>TEAM CAPTAIN</p>
-        </div>
-
-        <div class="player-card">
-            <h3>JURIST</h3>
-            <p>SUPPORT</p>
-        </div>
-
-    </div>
-
-    <div class="full-team">
-
-        <a href="players.html" class="button">
-            VIEW FULL TEAM
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- SCRIMS -->
-<section class="scrim-section" id="scrims">
-
-    <h2 class="section-title">SCRIMS</h2>
-
-    <p class="section-subtitle">
-        NØV3X competitive operations.
-    </p>
-
-    <div class="scrim-card">
-
-        <h3>8PM SCRIMMAGE</h3>
-
-        <p>
-            One squad. One fate.<br>
-            Compete. Improve. Dominate.
-        </p>
-
-        <a href="scrims.html" class="button">
-            SCRIM INFORMATION
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- TRYOUT HUB -->
-<section class="tryout-section" id="tryouts">
-
-    <h2 class="section-title">TRYOUT HUB</h2>
-
-    <p class="section-subtitle">
-        Ready to become part of NØV3X?
-    </p>
-
-    <div class="tryout-box">
-
-        <h3>JOIN NØV3X</h3>
-
-        <p>
-            Submit your application and enter the tryout process.
-        </p>
-
-        <a href="tryouts.html" class="button">
-            APPLY FOR TRYOUT
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-    © 2026 NØV3X CORE
-</footer>
-
-</body>
-</html>
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  
+    <title>NØV3X | Tryout Hub</title>  
+  
+    <link rel="stylesheet" href="style.css">  
+</head>  
+  
+<body>  
+  
+<header class="navbar">  
+    <div class="logo">NØV3X</div>  
+  
+    <nav>  
+        <a href="index.html">HOME</a>  
+        <a href="index.html#core">THE CORE</a>  
+        <a href="index.html#competitive">COMPETITIVE</a>  
+        <a href="tryouts.html" class="active">TRYOUT HUB</a>  
+    </nav>  
+</header>  
+  
+  
+<main>  
+  
+    <!-- HERO -->  
+  
+    <section class="tryout-hero">  
+  
+        <p class="small-title">NØV3X COMPETITIVE DIVISION</p>  
+  
+        <h1>TRYOUT <span>HUB</span></h1>  
+  
+        <p>  
+            Apply to become part of the NØV3X competitive core.  
+        </p>  
+  
+        <a href="#application" class="main-btn">  
+            APPLY FOR TRYOUT  
+        </a>  
+  
+    </section>  
+  
+  
+    <!-- REQUIREMENTS -->  
+  
+    <section class="section">  
+  
+        <h2>TRYOUT REQUIREMENTS</h2>  
+  
+        <div class="requirements">  
+  
+            <div class="info-card">  
+                <h3>🎯 SKILL</h3>  
+                <p>Strong game sense, mechanics and communication.</p>  
+            </div>  
+  
+            <div class="info-card">  
+                <h3>🎙️ COMMUNICATION</h3>  
+                <p>Clear and consistent communication during matches.</p>  
+            </div>  
+  
+            <div class="info-card">  
+                <h3>⚔️ EXPERIENCE</h3>  
+                <p>Competitive experience is preferred.</p>  
+            </div>  
+  
+            <div class="info-card">  
+                <h3>🔥 ATTITUDE</h3>  
+                <p>Respect teammates, opponents and staff.</p>  
+            </div>  
+  
+        </div>  
+  
+    </section>  
+  
+  
+    <!-- ROLES -->  
+  
+    <section class="section">  
+  
+        <h2>AVAILABLE ROLES</h2>  
+  
+        <div class="roles">  
+  
+            <div class="role-card">  
+                <span>01</span>  
+                <h3>ASSAULT</h3>  
+                <p>Entry / aggressive player</p>  
+            </div>  
+  
+            <div class="role-card">  
+                <span>02</span>  
+                <h3>SUPPORT</h3>  
+                <p>Utility / team support</p>  
+            </div>  
+  
+            <div class="role-card">  
+                <span>03</span>  
+                <h3>SNIPER</h3>  
+                <p>Long-range specialist</p>  
+            </div>  
+  
+            <div class="role-card">  
+                <span>04</span>  
+                <h3>IGL</h3>  
+                <p>In-game leader</p>  
+            </div>  
+  
+            <div class="role-card">  
+                <span>05</span>  
+                <h3>FLEX</h3>  
+                <p>Adaptable all-round player</p>  
+            </div>  
+  
+        </div>  
+  
+    </section>  
+  
+  
+    <!-- APPLICATION -->  
+  
+    <section class="section application-section" id="application">  
+  
+        <h2>APPLICATION</h2>  
+  
+        <form id="applicationForm">  
+  
+            <input  
+                type="text"  
+                id="ign"  
+                placeholder="IN-GAME NAME"  
+                required  
+            >  
+  
+            <input  
+                type="text"  
+                id="discord"  
+                placeholder="DISCORD USERNAME"  
+                required  
+            >  
+  
+            <select id="role" required>  
+  
+                <option value="">SELECT ROLE</option>  
+  
+                <option value="Assault">Assault</option>  
+                <option value="Support">Support</option>  
+                <option value="Sniper">Sniper</option>  
+                <option value="IGL">IGL</option>  
+                <option value="Flex">Flex</option>  
+  
+            </select>  
+  
+            <input  
+                type="text"  
+                id="experience"  
+                placeholder="COMPETITIVE EXPERIENCE"  
+                required  
+            >  
+  
+            <button type="submit" class="main-btn">  
+                SUBMIT APPLICATION  
+            </button>  
+  
+        </form>  
+  
+        <div id="applicationMessage"></div>  
+  
+    </section>  
+  
+  
+    <!-- APPLICANT SYSTEM -->  
+  
+    <section class="section">  
+  
+        <div class="applicant-header">  
+  
+            <div>  
+                <p class="small-title">ADMIN PANEL</p>  
+                <h2>APPLICANTS</h2>  
+            </div>  
+  
+            <div class="applicant-count">  
+                <span id="applicantCount">0</span>  
+                APPLICATIONS  
+            </div>  
+  
+        </div>  
+  
+  
+        <!-- SEARCH -->  
+  
+        <div class="filters">  
+  
+            <input  
+                type="text"  
+                id="searchApplicant"  
+                placeholder="SEARCH APPLICANT..."  
+            >  
+  
+            <select id="statusFilter">  
+  
+                <option value="All">ALL STATUS</option>  
+                <option value="Pending">PENDING</option>  
+                <option value="Testing">TESTING</option>  
+                <option value="Accepted">ACCEPTED</option>  
+                <option value="Rejected">REJECTED</option>  
+  
+            </select>  
+  
+  
+            <select id="roleFilter">  
+  
+                <option value="All">ALL ROLES</option>  
+                <option value="Assault">ASSAULT</option>  
+                <option value="Support">SUPPORT</option>  
+                <option value="Sniper">SNIPER</option>  
+                <option value="IGL">IGL</option>  
+                <option value="Flex">FLEX</option>  
+  
+            </select>  
+  
+        </div>  
+  
+  
+        <!-- APPLICANT LIST -->  
+  
+        <div id="applicantList" class="applicant-list"></div>  
+  
+    </section>  
+  
+  
+    <!-- TRYOUT SCHEDULE -->  
+  
+    <section class="section">  
+  
+        <h2>TRYOUT SCHEDULE</h2>  
+  
+        <div class="schedule-card">  
+  
+            <div>  
+                <span>OPEN</span>  
+                <strong>7:55 PM</strong>  
+            </div>  
+  
+            <div>  
+                <span>CHECK-IN</span>  
+                <strong>8:00 PM</strong>  
+            </div>  
+  
+            <div>  
+                <span>TESTING</span>  
+                <strong>8:10 PM</strong>  
+            </div>  
+  
+        </div>  
+  
+    </section>  
+  
+</main>  
+  
+  
+<footer>  
+  
+    <h2>NØV3X</h2>  
+  
+    <p>ONE CORE. ONE PURPOSE.</p>  
+  
+</footer>  
+  
+  
+<script src="tryouts.js"></script>  
+  
+</body>  
+</html>  
