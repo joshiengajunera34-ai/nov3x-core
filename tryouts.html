@@ -1,515 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NØV3X — TRYOUT HUB</title>
+    <title>NØV3X | Tryout Hub</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
+    <link rel="stylesheet" href="style.css">
 
-html{
-    scroll-behavior:smooth;
-}
+    <style>
+        /* =========================
+           PARTICIPANTS SECTION
+        ========================= */
 
-body{
-    background:#08000f;
-    color:#fff;
-    min-height:100vh;
-}
+        .participants-section {
+            max-width: 960px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
 
-/* NAVBAR */
-header{
-    position:sticky;
-    top:0;
-    z-index:100;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 7%;
-    background:#09000d;
-    border-bottom:1px solid #24132f;
-}
+        .section-header {
+            margin-bottom: 28px;
+        }
 
-.logo{
-    font-size:25px;
-    font-weight:bold;
-    letter-spacing:2px;
-}
+        .section-header h2 {
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 8px;
+        }
 
-nav{
-    display:flex;
-    gap:25px;
-}
+        .section-header p {
+            color: #777;
+            font-size: 14px;
+        }
 
-nav a{
-    color:#aaa;
-    text-decoration:none;
-    font-size:13px;
-    transition:.2s;
-}
+        .participants-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-nav a:hover{
-    color:#fff;
-}
+        .participant-card {
+            display: grid;
+            grid-template-columns: 70px 1fr auto auto;
+            align-items: center;
+            gap: 20px;
 
-/* HERO */
-.hero{
-    text-align:center;
-    padding:90px 20px 60px;
-}
+            padding: 22px;
+            background: #08000d;
+            border: 1px solid #24102d;
 
-.hero h1{
-    font-size:48px;
-    letter-spacing:3px;
-    margin-bottom:15px;
-}
+            transition: 0.2s ease;
+        }
 
-.hero p{
-    color:#999;
-    font-size:16px;
-}
+        .participant-card:hover {
+            border-color: #71358c;
+            transform: translateY(-2px);
+        }
 
-/* CONTAINER */
-.container{
-    width:90%;
-    max-width:1000px;
-    margin:auto;
-}
+        .participant-number {
+            color: #8d4baa;
+            font-weight: bold;
+            font-size: 14px;
+        }
 
-/* APPLICATION */
-.application{
-    background:#100018;
-    border:1px solid #32133f;
-    padding:35px;
-    margin-bottom:60px;
-}
+        .participant-info h3 {
+            color: #fff;
+            margin: 0 0 6px;
+            font-size: 17px;
+        }
 
-.section-title{
-    font-size:25px;
-    margin-bottom:8px;
-}
+        .participant-info p {
+            color: #777;
+            margin: 0;
+            font-size: 13px;
+        }
 
-.section-subtitle{
-    color:#888;
-    margin-bottom:30px;
-}
+        .participant-details {
+            display: flex;
+            gap: 18px;
+            color: #999;
+            font-size: 11px;
+        }
 
-.form-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-}
+        .participant-status {
+            border: 1px solid #633775;
+            color: #a974bd;
+            padding: 8px 14px;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
 
-.form-group{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-}
+        @media (max-width: 700px) {
 
-.form-group.full{
-    grid-column:1 / -1;
-}
+            .participant-card {
+                grid-template-columns: 50px 1fr;
+            }
 
-label{
-    color:#bbb;
-    font-size:13px;
-}
+            .participant-details {
+                grid-column: 2;
+            }
 
-input,
-select,
-textarea{
-    width:100%;
-    padding:14px;
-    background:#08000f;
-    color:#fff;
-    border:1px solid #3a1a47;
-    outline:none;
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-    border-color:#8d45a8;
-}
-
-textarea{
-    min-height:120px;
-    resize:vertical;
-}
-
-select{
-    cursor:pointer;
-}
-
-option{
-    background:#100018;
-}
-
-.submit-btn{
-    margin-top:25px;
-    width:100%;
-    padding:15px;
-    background:transparent;
-    color:#fff;
-    border:1px solid #8d45a8;
-    cursor:pointer;
-    font-weight:bold;
-    letter-spacing:1px;
-    transition:.2s;
-}
-
-.submit-btn:hover{
-    background:#8d45a8;
-}
-
-/* APPLICANTS */
-.applicants{
-    padding-bottom:70px;
-}
-
-.applicant-header{
-    margin-bottom:25px;
-}
-
-.applicant-header h2{
-    font-size:27px;
-}
-
-.applicant-header p{
-    color:#777;
-    margin-top:7px;
-}
-
-.applicant-list{
-    display:grid;
-    gap:15px;
-}
-
-.applicant{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:22px;
-    background:#100018;
-    border:1px solid #291333;
-}
-
-.applicant-info h3{
-    margin-bottom:6px;
-}
-
-.applicant-info p{
-    color:#777;
-    font-size:13px;
-}
-
-.status{
-    padding:8px 13px;
-    border:1px solid #644070;
-    color:#c89ddd;
-    font-size:12px;
-}
-
-/* EMPTY STATE */
-.empty{
-    text-align:center;
-    padding:35px;
-    color:#666;
-    border:1px dashed #291333;
-}
-
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:25px;
-    border-top:1px solid #24132f;
-    color:#555;
-    font-size:13px;
-}
-
-/* MOBILE */
-@media(max-width:700px){
-
-    header{
-        padding:18px 5%;
-    }
-
-    nav{
-        gap:12px;
-    }
-
-    nav a{
-        font-size:11px;
-    }
-
-    .hero{
-        padding:65px 15px 45px;
-    }
-
-    .hero h1{
-        font-size:34px;
-    }
-
-    .application{
-        padding:22px;
-    }
-
-    .form-grid{
-        grid-template-columns:1fr;
-    }
-
-    .form-group.full{
-        grid-column:auto;
-    }
-
-    .applicant{
-        align-items:flex-start;
-        gap:15px;
-        flex-direction:column;
-    }
-}
-</style>
+            .participant-status {
+                grid-column: 2;
+                width: fit-content;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">NØV3X</div>
+    <!-- =========================
+         NAVBAR
+    ========================= -->
 
-    <nav>
-        <a href="index.html">HOME</a>
-        <a href="players.html">TEAM</a>
-        <a href="index.html#scrims">SCRIMS</a>
-        <a href="tryouts.html">TRYOUTS</a>
-    </nav>
-</header>
+    <header class="navbar">
 
-
-<section class="hero">
-    <h1>TRYOUT HUB</h1>
-    <p>Apply to become part of NØV3X CORE.</p>
-</section>
-
-
-<main class="container">
-
-<section class="application">
-
-    <h2 class="section-title">APPLY FOR TRYOUT</h2>
-
-    <p class="section-subtitle">
-        Submit your information below. Applications will appear in the applicant list.
-    </p>
-
-    <form id="tryoutForm">
-
-        <div class="form-grid">
-
-            <div class="form-group">
-                <label>PLAYER NAME</label>
-                <input
-                    type="text"
-                    id="playerName"
-                    placeholder="Enter your name"
-                    required>
-            </div>
-
-            <div class="form-group">
-                <label>IN-GAME NAME / IGN</label>
-                <input
-                    type="text"
-                    id="ign"
-                    placeholder="Enter your IGN"
-                    required>
-            </div>
-
-            <div class="form-group">
-                <label>ROLE</label>
-
-                <select id="role" required>
-                    <option value="">Select role</option>
-                    <option>Assault</option>
-                    <option>Support</option>
-                    <option>Sniper</option>
-                    <option>IGL</option>
-                    <option>Flex</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>AGE</label>
-                <input
-                    type="number"
-                    id="age"
-                    min="13"
-                    max="99"
-                    placeholder="Enter age"
-                    required>
-            </div>
-
-            <div class="form-group full">
-                <label>EXPERIENCE / MESSAGE</label>
-
-                <textarea
-                    id="message"
-                    placeholder="Tell NØV3X about your experience..."></textarea>
-            </div>
-
+        <div class="logo">
+            NØV3X
         </div>
 
-        <button type="submit" class="submit-btn">
-            SUBMIT TRYOUT APPLICATION
-        </button>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="team.html">TEAM</a>
+            <a href="scrims.html">SCRIMS</a>
+            <a href="tryouts.html">TRYOUTS</a>
+            <a href="#participants">PARTICIPANTS</a>
+        </nav>
 
-    </form>
-
-</section>
-
-
-<section class="applicants">
-
-    <div class="applicant-header">
-        <h2>TRYOUT APPLICANTS</h2>
-
-        <p>
-            Current players who have submitted a tryout application.
-        </p>
-    </div>
-
-    <div id="applicantList" class="applicant-list">
-
-        <div class="empty" id="emptyMessage">
-            No applications yet.
-        </div>
-
-    </div>
-
-</section>
-
-</main>
+    </header>
 
 
-<footer>
-    © 2026 NØV3X CORE
-</footer>
+    <!-- =========================
+         TRYOUT FORM
+    ========================= -->
+
+    <main>
+
+        <section class="tryout-section">
+
+            <form id="tryoutForm">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="playerName">
+                            PLAYER NAME
+                        </label>
+
+                        <input
+                            type="text"
+                            id="playerName"
+                            placeholder="Enter your name"
+                            required
+                        >
+                    </div>
 
 
-<script>
+                    <div class="form-group">
+                        <label for="ign">
+                            IN-GAME NAME / IGN
+                        </label>
 
-const form = document.getElementById("tryoutForm");
-const applicantList = document.getElementById("applicantList");
-const emptyMessage = document.getElementById("emptyMessage");
+                        <input
+                            type="text"
+                            id="ign"
+                            placeholder="Enter your IGN"
+                            required
+                        >
+                    </div>
 
-let applicants =
-    JSON.parse(localStorage.getItem("nov3xApplicants")) || [];
+                </div>
 
 
-function displayApplicants(){
+                <div class="form-row">
 
-    applicantList.innerHTML = "";
+                    <div class="form-group">
+                        <label for="role">
+                            ROLE
+                        </label>
 
-    if(applicants.length === 0){
+                        <select id="role" required>
+                            <option value="">Select role</option>
+                            <option value="Slayer">Slayer</option>
+                            <option value="SMG">SMG</option>
+                            <option value="AR">AR</option>
+                            <option value="Flex">Flex</option>
+                            <option value="Sniper">Sniper</option>
+                            <option value="Objective">Objective</option>
+                        </select>
+                    </div>
 
-        applicantList.innerHTML = `
-            <div class="empty">
-                No applications yet.
-            </div>
-        `;
 
-        return;
-    }
+                    <div class="form-group">
+                        <label for="age">
+                            AGE
+                        </label>
 
-    applicants.forEach((applicant, index) => {
+                        <input
+                            type="number"
+                            id="age"
+                            placeholder="Enter age"
+                            min="13"
+                            required
+                        >
+                    </div>
 
-        const card = document.createElement("div");
+                </div>
 
-        card.className = "applicant";
 
-        card.innerHTML = `
+                <div class="form-group full-width">
 
-            <div class="applicant-info">
+                    <label for="experience">
+                        EXPERIENCE / MESSAGE
+                    </label>
 
-                <h3>
-                    #${String(index + 1).padStart(3,"0")}
-                    — ${escapeHTML(applicant.name)}
-                </h3>
+                    <textarea
+                        id="experience"
+                        placeholder="Tell NØV3X about your experience..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit">
+                    SUBMIT TRYOUT APPLICATION
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- =========================
+             PARTICIPANTS
+        ========================= -->
+
+        <section
+            class="participants-section"
+            id="participants"
+        >
+
+            <div class="section-header">
+
+                <h2>
+                    TRYOUT PARTICIPANTS
+                </h2>
 
                 <p>
-                    IGN: ${escapeHTML(applicant.ign)}
-                    • ROLE: ${escapeHTML(applicant.role)}
+                    Current players who have submitted a tryout application.
                 </p>
 
             </div>
 
-            <div class="status">
-                PENDING
+
+            <div
+                class="participants-list"
+                id="participantsList"
+            >
+
+                <!-- Participant 001 -->
+
+                <div class="participant-card">
+
+                    <div class="participant-number">
+                        #001
+                    </div>
+
+                    <div class="participant-info">
+
+                        <h3>
+                            Joshien Gajunera
+                        </h3>
+
+                        <p>
+                            IGN: NV3|Csh mPZ
+                        </p>
+
+                    </div>
+
+                    <div class="participant-details">
+
+                        <span>
+                            ROLE: Flex
+                        </span>
+
+                        <span>
+                            AGE: 18
+                        </span>
+
+                    </div>
+
+                    <div class="participant-status">
+                        PENDING
+                    </div>
+
+                </div>
+
             </div>
-        `;
 
-        applicantList.appendChild(card);
-    });
-}
+        </section>
 
-
-form.addEventListener("submit", function(event){
-
-    event.preventDefault();
-
-    const applicant = {
-
-        name:
-            document.getElementById("playerName").value.trim(),
-
-        ign:
-            document.getElementById("ign").value.trim(),
-
-        role:
-            document.getElementById("role").value,
-
-        age:
-            document.getElementById("age").value,
-
-        message:
-            document.getElementById("message").value.trim()
-    };
+    </main>
 
 
-    applicants.push(applicant);
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
-    localStorage.setItem(
-        "nov3xApplicants",
-        JSON.stringify(applicants)
-    );
-
-
-    form.reset();
-
-    displayApplicants();
-
-    alert("TRYOUT APPLICATION SUBMITTED.");
-});
+    <footer>
+        © 2026 NØV3X CORE
+    </footer>
 
 
-function escapeHTML(text){
+    <!-- =========================
+         PARTICIPANT SCRIPT
+    ========================= -->
 
-    const div = document.createElement("div");
+    <script>
 
-    div.textContent = text;
+        const form = document.getElementById("tryoutForm");
+        const participantsList =
+            document.getElementById("participantsList");
 
-    return div.innerHTML;
-}
+
+        form.addEventListener("submit", function (event) {
+
+            event.preventDefault();
 
 
-displayApplicants();
+            const playerName =
+                document.getElementById("playerName").value;
 
-</script>
+            const ign =
+                document.getElementById("ign").value;
+
+            const role =
+                document.getElementById("role").value;
+
+            const age =
+                document.getElementById("age").value;
+
+
+            /*
+             * Count existing participants
+             */
+
+            const participantCount =
+                participantsList.children.length + 1;
+
+
+            const number =
+                String(participantCount).padStart(3, "0");
+
+
+            /*
+             * Create participant card
+             */
+
+            const participant =
+                document.createElement("div");
+
+            participant.className =
+                "participant-card";
+
+
+            participant.innerHTML = `
+
+                <div class="participant-number">
+                    #${number}
+                </div>
+
+                <div class="participant-info">
+
+                    <h3>
+                        ${playerName}
+                    </h3>
+
+                    <p>
+                        IGN: ${ign}
+                    </p>
+
+                </div>
+
+                <div class="participant-details">
+
+                    <span>
+                        ROLE: ${role}
+                    </span>
+
+                    <span>
+                        AGE: ${age}
+                    </span>
+
+                </div>
+
+                <div class="participant-status">
+                    PENDING
+                </div>
+
+            `;
+
+
+            /*
+             * Add participant to list
+             */
+
+            participantsList.appendChild(participant);
+
+
+            /*
+             * Reset form
+             */
+
+            form.reset();
+
+
+            /*
+             * Scroll to participants
+             */
+
+            document
+                .getElementById("participants")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        });
+
+    </script>
 
 </body>
+
 </html>
