@@ -1,9 +1,8 @@
 <!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>NØV3X CORE</title>
-
-<style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NØV3X CORE</title><style>
     * {
         margin: 0;
         padding: 0;
@@ -29,7 +28,7 @@
         border-bottom: 1px solid #32103f;
         position: sticky;
         top: 0;
-        background: rgba(8, 0, 15, 0.95);
+        background: rgba(8, 0, 15, 0.96);
         z-index: 100;
     }
 
@@ -100,7 +99,7 @@
     }
 
     section {
-        padding: 70px 20px;
+        padding: 80px 20px;
         text-align: center;
     }
 
@@ -110,7 +109,7 @@
         margin-bottom: 15px;
     }
 
-    section p {
+    section > p {
         color: #888;
         margin-bottom: 30px;
     }
@@ -118,6 +117,7 @@
     .cards {
         display: flex;
         justify-content: center;
+        align-items: stretch;
         gap: 20px;
         flex-wrap: wrap;
     }
@@ -133,6 +133,7 @@
     .card:hover {
         transform: translateY(-5px);
         border-color: #a83bd1;
+        box-shadow: 0 0 20px rgba(168, 59, 209, 0.2);
     }
 
     .card h3 {
@@ -140,6 +141,7 @@
     }
 
     .card p {
+        color: #888;
         margin: 0;
     }
 
@@ -159,6 +161,11 @@
         nav {
             gap: 12px;
         }
+
+        .card {
+            width: 90%;
+            max-width: 300px;
+        }
     }
 </style>
 
@@ -173,7 +180,9 @@
     <a href="join.html">JOIN US</a>
 </nav>
 
-</header><main><section class="hero">
+</header><main><!-- HERO -->
+
+<section class="hero">
 
     <h1>NØV3X</h1>
 
@@ -190,6 +199,8 @@
 </section>
 
 
+<!-- TEAM -->
+
 <section>
 
     <h2>THE CORE</h2>
@@ -199,28 +210,30 @@
     <div class="cards">
 
         <div class="card">
-            <h3>PLAYER 01</h3>
-            <p>TEAM CAPTAIN</p>
+            <h3>JETHRO</h3>
+            <p>VICE MASTER</p>
         </div>
 
         <div class="card">
-            <h3>PLAYER 02</h3>
-            <p>ASSAULT</p>
+            <h3>JOSHIEN</h3>
+            <p>CLAN MASTER</p>
         </div>
 
         <div class="card">
-            <h3>PLAYER 03</h3>
-            <p>SUPPORT</p>
+            <h3>JURIST</h3>
+            <p>VICE MASTER</p>
         </div>
 
     </div>
 
-    <br>
+    <br><br>
 
     <a href="players.html" class="btn">VIEW FULL TEAM</a>
 
 </section>
 
+
+<!-- COMPETITIVE HUB -->
 
 <section>
 
@@ -256,6 +269,8 @@
 </section>
 
 
+<!-- JOIN -->
+
 <section>
 
     <h2>JOIN NØV3X</h2>
@@ -266,6 +281,8 @@
 
 </section>
 
+
+<!-- CONTACT -->
 
 <section>
 
