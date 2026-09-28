@@ -1,8 +1,9 @@
 <!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NØV3X CORE</title><style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>NØV3X CORE</title>
+
+<style>
     * {
         margin: 0;
         padding: 0;
@@ -10,80 +11,107 @@
         font-family: Arial, sans-serif;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
-        background: #080808;
+        background: linear-gradient(135deg, #08000f, #250035);
         color: white;
         min-height: 100vh;
     }
 
     header {
-        padding: 25px 8%;
+        padding: 22px 7%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid #222;
+        border-bottom: 1px solid #32103f;
+        position: sticky;
+        top: 0;
+        background: rgba(8, 0, 15, 0.95);
+        z-index: 100;
     }
 
     .logo {
-        font-size: 25px;
+        font-size: 24px;
         font-weight: bold;
         letter-spacing: 3px;
+    }
+
+    nav {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     nav a {
         color: #aaa;
         text-decoration: none;
-        margin-left: 25px;
+        font-size: 13px;
         transition: 0.3s;
     }
 
     nav a:hover {
-        color: white;
+        color: #d58aff;
     }
 
     .hero {
-        min-height: 80vh;
+        min-height: 75vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: 20px;
+        padding: 30px 20px;
     }
 
     .hero h1 {
-        font-size: clamp(50px, 10vw, 110px);
+        font-size: clamp(55px, 12vw, 120px);
         letter-spacing: 10px;
-        margin-bottom: 15px;
     }
 
     .hero p {
-        color: #888;
-        font-size: 18px;
-        margin-bottom: 30px;
+        color: #aaa;
+        letter-spacing: 4px;
+        margin: 15px 0 30px;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .btn {
         display: inline-block;
-        padding: 14px 30px;
-        border: 1px solid white;
+        padding: 14px 25px;
+        border: 1px solid #a83bd1;
         color: white;
         text-decoration: none;
         transition: 0.3s;
     }
 
     .btn:hover {
-        background: white;
-        color: black;
+        background: #a83bd1;
+        box-shadow: 0 0 20px #a83bd1;
     }
 
     section {
-        padding: 70px 8%;
+        padding: 70px 20px;
         text-align: center;
     }
 
     section h2 {
         font-size: 35px;
+        letter-spacing: 3px;
+        margin-bottom: 15px;
+    }
+
+    section p {
+        color: #888;
         margin-bottom: 30px;
     }
 
@@ -95,10 +123,16 @@
     }
 
     .card {
-        width: 250px;
-        padding: 30px;
-        background: #111;
-        border: 1px solid #222;
+        width: 230px;
+        padding: 30px 20px;
+        background: rgba(20, 0, 30, 0.8);
+        border: 1px solid #421650;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        border-color: #a83bd1;
     }
 
     .card h3 {
@@ -106,70 +140,146 @@
     }
 
     .card p {
-        color: #777;
+        margin: 0;
     }
 
     footer {
-        padding: 25px;
+        padding: 30px;
         text-align: center;
         color: #555;
-        border-top: 1px solid #222;
+        border-top: 1px solid #32103f;
+    }
+
+    @media (max-width: 700px) {
+        header {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        nav {
+            gap: 12px;
+        }
     }
 </style>
 
-</head><body><header>
-    <div class="logo">NØV3X</div>
+</head><body><header><div class="logo">NØV3X</div>
 
-    <nav>
-        <a href="#home">HOME</a>
-        <a href="#team">TEAM</a>
-        <a href="#contact">CONTACT</a>
-    </nav>
-</header>
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="players.html">TEAM</a>
+    <a href="scores.html">SCORES</a>
+    <a href="scrims.html">SCRIMS</a>
+    <a href="leaderboard.html">LEADERBOARD</a>
+    <a href="join.html">JOIN US</a>
+</nav>
 
-<main id="home">
+</header><main><section class="hero">
 
-    <div class="hero">
-        <h1>NØV3X</h1>
-        <p>ONE SQUAD. ONE FATE.</p>
-        <a href="#team" class="btn">ENTER CORE</a>
+    <h1>NØV3X</h1>
+
+    <p>ONE SQUAD. ONE FATE.</p>
+
+    <div class="buttons">
+
+        <a href="players.html" class="btn">THE CORE</a>
+
+        <a href="scores.html" class="btn">SCORES</a>
+
     </div>
 
-    <section id="team">
-        <h2>THE CORE</h2>
+</section>
 
-        <div class="cards">
-            <div class="card">
-                <h3>PLAYER 01</h3>
-                <p>TEAM CAPTAIN</p>
-            </div>
 
-            <div class="card">
-                <h3>PLAYER 02</h3>
-                <p>ASSAULT</p>
-            </div>
+<section>
 
-            <div class="card">
-                <h3>PLAYER 03</h3>
-                <p>SUPPORT</p>
-            </div>
+    <h2>THE CORE</h2>
+
+    <p>Meet the squad.</p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>PLAYER 01</h3>
+            <p>TEAM CAPTAIN</p>
         </div>
-    </section>
 
-    <section id="contact">
-        <h2>JOIN THE CORE</h2>
-        <p style="color:#777; margin-bottom:25px;">
-            Ready to enter the next level?
-        </p>
+        <div class="card">
+            <h3>PLAYER 02</h3>
+            <p>ASSAULT</p>
+        </div>
 
-        <a href="#" class="btn">CONTACT US</a>
-    </section>
+        <div class="card">
+            <h3>PLAYER 03</h3>
+            <p>SUPPORT</p>
+        </div>
 
-</main>
+    </div>
 
-<footer>
+    <br>
+
+    <a href="players.html" class="btn">VIEW FULL TEAM</a>
+
+</section>
+
+
+<section>
+
+    <h2>COMPETITIVE HUB</h2>
+
+    <p>Everything NØV3X in one place.</p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>📊 SCORES</h3>
+            <p>View official match scores.</p>
+            <br>
+            <a href="scores.html" class="btn">OPEN</a>
+        </div>
+
+        <div class="card">
+            <h3>🎮 SCRIMS</h3>
+            <p>Upcoming scrims and slots.</p>
+            <br>
+            <a href="scrims.html" class="btn">OPEN</a>
+        </div>
+
+        <div class="card">
+            <h3>🏆 LEADERBOARD</h3>
+            <p>Overall team standings.</p>
+            <br>
+            <a href="leaderboard.html" class="btn">OPEN</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <h2>JOIN NØV3X</h2>
+
+    <p>Ready to enter the Core?</p>
+
+    <a href="join.html" class="btn">JOIN US</a>
+
+</section>
+
+
+<section>
+
+    <h2>CONTACT</h2>
+
+    <p>Get in touch with NØV3X CORE.</p>
+
+    <a href="mailto:youremail@example.com" class="btn">
+        EMAIL US
+    </a>
+
+</section>
+
+</main><footer>
     © 2026 NØV3X CORE
-</footer>
-
-</body>
+</footer></body>
 </html>
