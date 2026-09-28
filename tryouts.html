@@ -1,32 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>NØV3X | Tryout Hub</title>
 
-    <link rel="stylesheet" href="style.css">
-
     <style>
-        /* =========================
-           PARTICIPANTS SECTION
-        ========================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #050008;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            height: 70px;
+            border-bottom: 1px solid #24102d;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            background: #050008;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #888;
+            text-decoration: none;
+            font-size: 13px;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        /* ================= TRYOUT ================= */
+
+        .tryout-section {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 30px 34px 34px;
+            border-left: 1px solid #24102d;
+            border-right: 1px solid #24102d;
+            border-bottom: 1px solid #24102d;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .full-width {
+            margin-top: 4px;
+        }
+
+        label {
+            color: #999;
+            font-size: 12px;
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            background: #07000c;
+            border: 1px solid #291333;
+            color: #fff;
+            padding: 13px;
+            outline: none;
+            font-size: 13px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #71358c;
+        }
+
+        select {
+            appearance: auto;
+        }
+
+        textarea {
+            min-height: 115px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 24px;
+            padding: 14px;
+            background: transparent;
+            border: 1px solid #71358c;
+            color: #fff;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #16051d;
+            border-color: #a65bc4;
+        }
+
+        /* ================= PARTICIPANTS ================= */
 
         .participants-section {
             max-width: 960px;
-            margin: 80px auto;
-            padding: 0 20px;
+            margin: 58px auto 80px;
         }
 
         .section-header {
-            margin-bottom: 28px;
+            margin-bottom: 25px;
         }
 
         .section-header h2 {
-            font-size: 28px;
-            color: #fff;
+            font-size: 27px;
             margin-bottom: 8px;
         }
 
@@ -67,13 +194,12 @@
 
         .participant-info h3 {
             color: #fff;
-            margin: 0 0 6px;
+            margin-bottom: 6px;
             font-size: 17px;
         }
 
         .participant-info p {
             color: #777;
-            margin: 0;
             font-size: 13px;
         }
 
@@ -92,7 +218,43 @@
             letter-spacing: 1px;
         }
 
+        /* ================= FOOTER ================= */
+
+        footer {
+            border-top: 1px solid #24102d;
+            padding: 24px;
+            text-align: center;
+            color: #555;
+            font-size: 12px;
+        }
+
+        /* ================= MOBILE ================= */
+
         @media (max-width: 700px) {
+
+            .navbar {
+                padding: 0 20px;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 10px;
+            }
+
+            .tryout-section {
+                padding: 25px 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .participants-section {
+                padding: 0 20px;
+            }
 
             .participant-card {
                 grid-template-columns: 50px 1fr;
@@ -112,9 +274,7 @@
 
 <body>
 
-    <!-- =========================
-         NAVBAR
-    ========================= -->
+    <!-- NAVBAR -->
 
     <header class="navbar">
 
@@ -133,9 +293,7 @@
     </header>
 
 
-    <!-- =========================
-         TRYOUT FORM
-    ========================= -->
+    <!-- TRYOUT FORM -->
 
     <main>
 
@@ -146,10 +304,7 @@
                 <div class="form-row">
 
                     <div class="form-group">
-                        <label for="playerName">
-                            PLAYER NAME
-                        </label>
-
+                        <label>PLAYER NAME</label>
                         <input
                             type="text"
                             id="playerName"
@@ -158,12 +313,8 @@
                         >
                     </div>
 
-
                     <div class="form-group">
-                        <label for="ign">
-                            IN-GAME NAME / IGN
-                        </label>
-
+                        <label>IN-GAME NAME / IGN</label>
                         <input
                             type="text"
                             id="ign"
@@ -178,26 +329,21 @@
                 <div class="form-row">
 
                     <div class="form-group">
-                        <label for="role">
-                            ROLE
-                        </label>
+                        <label>ROLE</label>
 
                         <select id="role" required>
                             <option value="">Select role</option>
-                            <option value="Slayer">Slayer</option>
-                            <option value="SMG">SMG</option>
-                            <option value="AR">AR</option>
-                            <option value="Flex">Flex</option>
-                            <option value="Sniper">Sniper</option>
-                            <option value="Objective">Objective</option>
+                            <option>Slayer</option>
+                            <option>SMG</option>
+                            <option>AR</option>
+                            <option>Flex</option>
+                            <option>Sniper</option>
+                            <option>Objective</option>
                         </select>
                     </div>
 
-
                     <div class="form-group">
-                        <label for="age">
-                            AGE
-                        </label>
+                        <label>AGE</label>
 
                         <input
                             type="number"
@@ -213,9 +359,7 @@
 
                 <div class="form-group full-width">
 
-                    <label for="experience">
-                        EXPERIENCE / MESSAGE
-                    </label>
+                    <label>EXPERIENCE / MESSAGE</label>
 
                     <textarea
                         id="experience"
@@ -235,9 +379,7 @@
         </section>
 
 
-        <!-- =========================
-             PARTICIPANTS
-        ========================= -->
+        <!-- PARTICIPANTS -->
 
         <section
             class="participants-section"
@@ -246,9 +388,7 @@
 
             <div class="section-header">
 
-                <h2>
-                    TRYOUT PARTICIPANTS
-                </h2>
+                <h2>TRYOUT PARTICIPANTS</h2>
 
                 <p>
                     Current players who have submitted a tryout application.
@@ -262,7 +402,7 @@
                 id="participantsList"
             >
 
-                <!-- Participant 001 -->
+                <!-- Existing participant -->
 
                 <div class="participant-card">
 
@@ -284,13 +424,8 @@
 
                     <div class="participant-details">
 
-                        <span>
-                            ROLE: Flex
-                        </span>
-
-                        <span>
-                            AGE: 18
-                        </span>
+                        <span>ROLE: Flex</span>
+                        <span>AGE: 18</span>
 
                     </div>
 
@@ -307,18 +442,14 @@
     </main>
 
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
+    <!-- FOOTER -->
 
     <footer>
         © 2026 NØV3X CORE
     </footer>
 
 
-    <!-- =========================
-         PARTICIPANT SCRIPT
-    ========================= -->
+    <!-- PARTICIPANT JAVASCRIPT -->
 
     <script>
 
@@ -326,11 +457,9 @@
         const participantsList =
             document.getElementById("participantsList");
 
-
-        form.addEventListener("submit", function (event) {
+        form.addEventListener("submit", function(event) {
 
             event.preventDefault();
-
 
             const playerName =
                 document.getElementById("playerName").value;
@@ -344,29 +473,16 @@
             const age =
                 document.getElementById("age").value;
 
-
-            /*
-             * Count existing participants
-             */
-
-            const participantCount =
-                participantsList.children.length + 1;
-
-
             const number =
-                String(participantCount).padStart(3, "0");
-
-
-            /*
-             * Create participant card
-             */
+                String(
+                    participantsList.children.length + 1
+                ).padStart(3, "0");
 
             const participant =
                 document.createElement("div");
 
             participant.className =
                 "participant-card";
-
 
             participant.innerHTML = `
 
@@ -375,27 +491,13 @@
                 </div>
 
                 <div class="participant-info">
-
-                    <h3>
-                        ${playerName}
-                    </h3>
-
-                    <p>
-                        IGN: ${ign}
-                    </p>
-
+                    <h3>${playerName}</h3>
+                    <p>IGN: ${ign}</p>
                 </div>
 
                 <div class="participant-details">
-
-                    <span>
-                        ROLE: ${role}
-                    </span>
-
-                    <span>
-                        AGE: ${age}
-                    </span>
-
+                    <span>ROLE: ${role}</span>
+                    <span>AGE: ${age}</span>
                 </div>
 
                 <div class="participant-status">
@@ -404,24 +506,9 @@
 
             `;
 
-
-            /*
-             * Add participant to list
-             */
-
             participantsList.appendChild(participant);
 
-
-            /*
-             * Reset form
-             */
-
             form.reset();
-
-
-            /*
-             * Scroll to participants
-             */
 
             document
                 .getElementById("participants")
@@ -434,5 +521,4 @@
     </script>
 
 </body>
-
 </html>
