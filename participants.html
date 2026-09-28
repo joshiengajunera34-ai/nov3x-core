@@ -1,210 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NØV3X | Participants</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #08000f;
+    color: white;
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+header {
+    background: rgba(8, 0, 15, 0.95);
+    border-bottom: 1px solid #24112f;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* PARTICIPANTS */
+.participants {
+    min-height: 90vh;
+    padding: 90px 7%;
+    background:
+        radial-gradient(circle at center, #260035 0%, #08000f 65%);
+}
+
+.title {
+    text-align: center;
+    font-size: 45px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 50px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid #281537;
+    padding: 40px 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #9d42ff;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #888;
+}
+
+.back {
+    text-align: center;
+    margin-top: 50px;
+}
 
-    <title>NØV3X | Participants</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background: #050008;
-            color: #fff;
-            font-family: Arial, Helvetica, sans-serif;
-            min-height: 100vh;
-        }
-
-        /* NAVBAR */
-
-        .navbar {
-            height: 70px;
-            border-bottom: 1px solid #24102d;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 0 7%;
-
-            background: #050008;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        nav {
-            display: flex;
-            gap: 25px;
-        }
-
-        nav a {
-            color: #888;
-            text-decoration: none;
-            font-size: 13px;
-        }
-
-        nav a:hover {
-            color: #fff;
-        }
-
-
-        /* PARTICIPANTS */
-
-        .participants-section {
-            max-width: 960px;
-            margin: 70px auto;
-            padding: 0 20px;
-        }
-
-        .section-header {
-            margin-bottom: 30px;
-        }
-
-        .section-header h1 {
-            font-size: 30px;
-            margin-bottom: 8px;
-        }
-
-        .section-header p {
-            color: #777;
-            font-size: 14px;
-        }
-
-
-        /* PLAYER CARD */
-
-        .participants-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .participant-card {
-            display: grid;
-
-            grid-template-columns:
-                70px
-                1fr
-                auto
-                auto;
-
-            align-items: center;
-
-            gap: 20px;
-
-            padding: 22px;
-
-            background: #08000d;
-
-            border: 1px solid #24102d;
-
-            transition: 0.2s;
-        }
-
-        .participant-card:hover {
-            border-color: #71358c;
-            transform: translateY(-2px);
-        }
-
-
-        .participant-number {
-            color: #8d4baa;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-
-        .participant-info h3 {
-            font-size: 17px;
-            margin-bottom: 6px;
-        }
-
-        .participant-info p {
-            color: #777;
-            font-size: 13px;
-        }
-
-
-        .participant-details {
-            display: flex;
-            gap: 18px;
-
-            color: #999;
-
-            font-size: 11px;
-        }
-
-
-        .participant-status {
-            border: 1px solid #633775;
-
-            color: #a974bd;
-
-            padding: 8px 14px;
-
-            font-size: 11px;
-
-            letter-spacing: 1px;
-        }
-
-
-        /* EMPTY */
-
-        .empty {
-            padding: 40px;
-
-            text-align: center;
-
-            color: #666;
-
-            border: 1px solid #24102d;
-
-            background: #08000d;
-        }
-
-
-        /* FOOTER */
-
-        footer {
-            border-top: 1px solid #24102d;
-
-            padding: 24px;
-
-            text-align: center;
-
-            color: #555;
-
-            font-size: 12px;
-
-            margin-top: 100px;
-        }
-
-
-        /* MOBILE */
-
-        @media (max-width: 700px) {
-
-            .navbar {
-                padding: 0 20px;
-            }
-
-            nav {
-                gap: 10px;
-            }
-
-            nav a {
-                font-size: 10px;
-            }
-
-            .participant-card {
-                grid-template-columns: 
+.button {
+    display: inline-block;
+    padding: 14px 30px;
+    border: 1px solid #9d42ff;
+    color: white;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: #9d42ff;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+
+    header {
+        padding: 18px 5%;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">NØV3X</div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="participants.html">PARTICIPANTS</a>
+        <a href="scrims.html">SCRIMS</a>
+        <a href="tryouts.html">TRYOUTS</a>
+    </nav>
+
+</header>
+
+<section class="participants">
+
+    <h1 class="title">PARTICIPANTS</h1>
+
+    <p class="subtitle">
+        NØV3X PARTICIPANT LIST
+    </p>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>JETHRO</h2>
+            <p>ASSAULT</p>
+        </div>
+
+        <div class="card">
+            <h2>JOSHIEN</h2>
+            <p>TEAM CAPTAIN</p>
+        </div>
+
+        <div class="card">
+            <h2>JURIST</h2>
+            <p>SUPPORT</p>
+        </div>
+
+        <div class="card">
+            <h2>PLAYER 04</h2>
+            <p>PARTICIPANT</p>
+        </div>
+
+        <div class="card">
+            <h2>PLAYER 05</h2>
+            <p>PARTICIPANT</p>
+        </div>
+
+        <div class="card">
+            <h2>PLAYER 06</h2>
+            <p>PARTICIPANT</p>
+        </div>
+
+    </div>
+
+    <div class="back">
+        <a href="index.html" class="button">
+            ← BACK TO HOME
+        </a>
+    </div>
+
+</section>
+
+</body>
+</html>
