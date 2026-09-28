@@ -12,6 +12,9 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
@@ -21,22 +24,23 @@ body {
     min-height: 100vh;
 }
 
+/* NAVBAR */
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    background: rgba(8, 0, 15, 0.95);
+    border-bottom: 1px solid #24112f;
     padding: 22px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(8,0,15,0.95);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .logo {
     font-size: 25px;
     font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
 nav {
@@ -47,80 +51,91 @@ nav {
 nav a {
     color: #aaa;
     text-decoration: none;
-    font-size: 13px;
-    transition: 0.2s;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
 nav a:hover {
     color: white;
 }
 
-section {
-    padding: 100px 7%;
-}
-
+/* HERO */
 .hero {
-    min-height: 85vh;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 80px 20px;
+    background:
+        radial-gradient(circle at center, #260035 0%, #08000f 65%);
 }
 
 .hero h1 {
     font-size: clamp(50px, 10vw, 100px);
-    letter-spacing: 8px;
+    letter-spacing: 12px;
+    margin-bottom: 15px;
 }
 
 .hero p {
     color: #999;
-    margin-top: 15px;
     font-size: 17px;
+    margin-bottom: 35px;
 }
 
 .button {
     display: inline-block;
-    margin-top: 30px;
-    padding: 14px 28px;
-    border: 1px solid rgba(255,255,255,0.35);
+    padding: 14px 30px;
+    border: 1px solid #9d42ff;
     color: white;
     text-decoration: none;
-    transition: 0.2s;
+    transition: 0.3s;
+    background: transparent;
 }
 
 .button:hover {
-    background: white;
-    color: black;
+    background: #9d42ff;
+    box-shadow: 0 0 25px rgba(157, 66, 255, 0.35);
 }
 
-.title {
+/* SECTIONS */
+section {
+    padding: 90px 7%;
+}
+
+.section-title {
     text-align: center;
     font-size: 38px;
     margin-bottom: 12px;
 }
 
-.subtitle {
+.section-subtitle {
     text-align: center;
     color: #888;
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 }
 
-/* FEATURED CORE */
-
-.core-grid {
+/* CORE */
+.core-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    max-width: 900px;
+    max-width: 950px;
     margin: auto;
 }
 
 .player-card {
-    padding: 35px 20px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid #281537;
+    padding: 40px 20px;
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.025);
+    transition: 0.3s;
+}
+
+.player-card:hover {
+    transform: translateY(-5px);
+    border-color: #9d42ff;
 }
 
 .player-card h3 {
@@ -130,160 +145,72 @@ section {
 
 .player-card p {
     color: #888;
+    font-size: 14px;
 }
 
 /* FULL TEAM */
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-.member-card {
-    padding: 25px 15px;
+.full-team {
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(255,255,255,0.02);
-    transition: 0.2s;
-}
-
-.member-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255,255,255,0.3);
-}
-
-.member-card h3 {
-    font-size: 16px;
-    margin-bottom: 8px;
-}
-
-.member-card p {
-    color: #777;
-    font-size: 12px;
+    margin-top: 35px;
 }
 
 /* SCRIMS */
-
-.scrim-container {
-    max-width: 900px;
-    margin: auto;
+.scrim-section {
+    background: #0c0015;
 }
 
 .scrim-card {
-    padding: 40px;
+    max-width: 850px;
+    margin: auto;
+    border: 1px solid #281537;
+    padding: 45px;
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.02);
 }
 
 .scrim-card h3 {
     font-size: 28px;
-    margin-bottom: 25px;
-}
-
-.scrim-info {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.info-box {
-    padding: 20px;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.info-box span {
-    display: block;
-    color: #777;
-    font-size: 12px;
-    margin-bottom: 8px;
-}
-
-.info-box strong {
-    font-size: 15px;
-}
-
-.rules {
-    text-align: left;
-    margin-top: 30px;
-    padding-top: 25px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.rules h4 {
     margin-bottom: 15px;
 }
 
-.rules p {
-    color: #999;
-    margin: 8px 0;
-}
-
-/* TRYOUT HUB */
-
-.tryout-container {
-    max-width: 900px;
-    margin: auto;
-}
-
-.tryout-card {
-    padding: 40px;
-    text-align: center;
-    border: 1px solid rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.02);
-}
-
-.tryout-card h3 {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.tryout-card > p {
-    color: #999;
+.scrim-card p {
+    color: #888;
     margin-bottom: 30px;
 }
 
-.tryout-info {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+/* TRYOUT HUB */
+.tryout-section {
+    text-align: center;
 }
 
-.tryout-rules {
-    text-align: left;
-    margin-top: 30px;
-    padding-top: 25px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+.tryout-box {
+    max-width: 850px;
+    margin: auto;
+    border: 1px solid #281537;
+    padding: 55px 30px;
+    background: rgba(255,255,255,0.02);
 }
 
-.tryout-rules h4 {
+.tryout-box h3 {
+    font-size: 30px;
     margin-bottom: 15px;
 }
 
-.tryout-rules p {
-    color: #999;
-    margin: 8px 0;
+.tryout-box p {
+    color: #888;
+    margin-bottom: 30px;
 }
 
-/* JOIN */
-
-.join {
-    text-align: center;
-}
-
+/* FOOTER */
 footer {
+    border-top: 1px solid #24112f;
+    padding: 30px;
     text-align: center;
-    padding: 25px;
-    border-top: 1px solid rgba(255,255,255,0.08);
     color: #555;
+    font-size: 14px;
 }
 
 /* MOBILE */
-
-@media (max-width: 800px) {
+@media (max-width: 700px) {
 
     header {
         padding: 18px 5%;
@@ -294,348 +221,5 @@ footer {
     }
 
     nav a {
-        font-size: 10px;
-    }
-
-    section {
-        padding: 75px 5%;
-    }
-
-    .core-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .scrim-info,
-    .tryout-info {
-        grid-template-columns: 1fr;
-    }
-
-    .scrim-card,
-    .tryout-card {
-        padding: 25px 18px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<!-- NAVIGATION -->
-
-<header>
-    <div class="logo">NØV3X</div>
-
-    <nav>
-        <a href="#home">HOME</a>
-        <a href="#team">TEAM</a>
-        <a href="#scrims">SCRIMS</a>
-        <a href="#tryouts">TRYOUTS</a>
-    </nav>
-</header>
-
-
-<!-- HOME -->
-
-<section id="home" class="hero">
-
-    <h1>NØV3X</h1>
-
-    <p>ONE SQUAD. ONE FATE.</p>
-
-    <a href="#team" class="button">
-        ENTER THE CORE
-    </a>
-
-</section>
-
-
-<!-- FEATURED CORE -->
-
-<section>
-
-    <h2 class="title">THE CORE</h2>
-
-    <p class="subtitle">
-        Meet the featured squad.
-    </p>
-
-    <div class="core-grid">
-
-        <!-- PLAYER 1 -->
-
-        <div class="player-card">
-            <h3>JETHRO</h3>
-            <p>ASSAULT</p>
-        </div>
-
-        <!-- PLAYER 2 -->
-
-        <div class="player-card">
-            <h3>JOSHIEN</h3>
-            <p>TEAM CAPTAIN</p>
-        </div>
-
-        <!-- PLAYER 3 -->
-
-        <div class="player-card">
-            <h3>JURIST</h3>
-            <p>SUPPORT</p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- FULL TEAM -->
-
-<section id="team">
-
-    <h2 class="title">FULL TEAM</h2>
-
-    <p class="subtitle">
-        The entire NØV3X roster.
-    </p>
-
-    <div class="team-grid">
-
-        <div class="member-card">
-            <h3>NV3 Bayla JK</h3>
-            <p>Aljames Bayla</p>
-        </div>
-
-        <div class="member-card">
-            <h3>NV3 Chris ØVD</h3>
-            <p>Christian Merwin Ortigoza</p>
-        </div>
-
-        <div class="member-card">
-            <h3>NV3 Rence JK</h3>
-            <p>Clarence Gilbuena</p>
-        </div>
-
-        <div class="member-card">
-            <h3>NV3 Dave ØVD</h3>
-            <p>Dave Lorence Oreta</p>
-        </div>
-
-        <div class="member-card">
-            <h3>NV3 Jeo ØVD</h3>
-            <p>Jeoffred de La Fuente</p>
-        </div>
-
-        <div class="member-card">
-            <h3>NV3 Yosh mPz</h3>
-            <p>Jethro Bautista</p>
-        </div>
-
-        <div class="member-card">
-            <h3>NV3 Kev mPz</h3>
-            <p>John Kevin D. Dumdum</p>
-        </div>
-
-        <div class="member-card">
-            <h3>NV3 John ØVD</h3>
-            <p>Johnrich Palapa</p>
-        </div>
-
-        <div class="member-card">
-            <h3>NV3 Miyuki mPz</h3>
-            <p>Joshien Gajunera</p>
-        </div>
-
-        <div class="member-card">
-            <h3>NV3 Ash mPz</h3>
-            <p>Jurist Lebante</p>
-        </div>
-
-        <div class="member-card">
-            <h3>NV3 Kei mPz</h3>
-            <p>Luis Ortigoza</p>
-        </div>
-
-        <div class="member-card">
-            <h3>NV3 Supa mPz</h3>
-            <p>Meco Igdanes</p>
-        </div>
-
-        <div class="member-card">
-            <h3>NV3 Prince JK</h3>
-            <p>Prence Izekiel</p>
-        </div>
-
-        <div class="member-card">
-            <h3>NV3 Ralp JK</h3>
-            <p>Raphael Adrian Jan Pasia</p>
-        </div>
-
-        <div class="member-card">
-            <h3>NV3 ACE ØVD</h3>
-            <p>Reyven Esguerra</p>
-        </div>
-
-        <div class="member-card">
-            <h3>NV3 Rhenz mPz</h3>
-            <p>Rhenz Angelo Planque</p>
-        </div>
-
-        <div class="member-card">
-            <h3>NV3 Ron JK</h3>
-            <p>Valdez Ron</p>
-        </div>
-
-        <div class="member-card">
-            <h3>NV3 Yman JK</h3>
-            <p>Yman Bas</p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- SCRIMS -->
-
-<section id="scrims">
-
-    <h2 class="title">SCRIMS</h2>
-
-    <p class="subtitle">
-        NØV3X competitive operations
-    </p>
-
-    <div class="scrim-container">
-
-        <div class="scrim-card">
-
-            <h3>8PM SCRIMMAGE</h3>
-
-            <div class="scrim-info">
-
-                <div class="info-box">
-                    <span>OPEN ROOM</span>
-                    <strong>7:55 PM</strong>
-                </div>
-
-                <div class="info-box">
-                    <span>GIVING SLOT</span>
-                    <strong>8:05 PM</strong>
-                </div>
-
-                <div class="info-box">
-                    <span>ROOM START</span>
-                    <strong>8:10 PM</strong>
-                </div>
-
-            </div>
-
-            <div class="rules">
-
-                <h4>SCRIM INFORMATION</h4>
-
-                <p>• Be ready before room opening.</p>
-                <p>• Follow the host's instructions.</p>
-                <p>• No unnecessary delays.</p>
-                <p>• Respect all participating teams.</p>
-                <p>• Good luck and have fun.</p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- TRYOUT HUB -->
-
-<section id="tryouts">
-
-    <h2 class="title">TRYOUT HUB</h2>
-
-    <p class="subtitle">
-        NØV3X competitive recruitment
-    </p>
-
-    <div class="tryout-container">
-
-        <div class="tryout-card">
-
-            <h3>JOIN NØV3X</h3>
-
-            <p>
-                Think you have what it takes to become part of the core?
-            </p>
-
-            <div class="tryout-info">
-
-                <div class="info-box">
-                    <span>STATUS</span>
-                    <strong>OPEN</strong>
-                </div>
-
-                <div class="info-box">
-                    <span>TYPE</span>
-                    <strong>TEAM TRYOUT</strong>
-                </div>
-
-                <div class="info-box">
-                    <span>FOCUS</span>
-                    <strong>SKILL + TEAMWORK</strong>
-                </div>
-
-            </div>
-
-            <div class="tryout-rules">
-
-                <h4>TRYOUT INFORMATION</h4>
-
-                <p>• Be respectful to all members.</p>
-                <p>• Follow the tryout host's instructions.</p>
-                <p>• Show communication and teamwork.</p>
-                <p>• Play fairly and professionally.</p>
-                <p>• Give your best performance.</p>
-
-            </div>
-
-            <a href="#" class="button">
-                APPLY FOR TRYOUT
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- JOIN -->
-
-<section class="join">
-
-    <h2 class="title">JOIN NØV3X</h2>
-
-    <p class="subtitle">
-        Ready to enter the next level?
-    </p>
-
-    <a href="#tryouts" class="button">
-        VIEW TRYOUTS
-    </a>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-    © 2026 NØV3X CORE
-</footer>
-
-</body>
-</html>
+        font-size: 11px;
+   
