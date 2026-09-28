@@ -1,59 +1,332 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NØV3X — Players</title><style>
-    body {
-        background: #160022;
-        color: white;
-        font-family: Arial, sans-serif;
-        text-align: center;
-        padding: 50px 20px;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NØV3X CORE - Full Team</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #08000f, #250035);
+    color: white;
+    min-height: 100vh;
+}
+
+header {
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #32103f;
+    background: rgba(8,0,15,0.96);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+nav a:hover {
+    color: #d58aff;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px 50px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 10vw, 80px);
+    letter-spacing: 8px;
+}
+
+.hero p {
+    color: #888;
+    margin-top: 15px;
+    letter-spacing: 3px;
+}
+
+section {
+    padding: 40px 7% 80px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: 3px;
+    margin-bottom: 35px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    padding: 28px 20px;
+    text-align: center;
+    background: rgba(20,0,30,0.8);
+    border: 1px solid #421650;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #a83bd1;
+    box-shadow: 0 0 22px rgba(168,59,209,0.25);
+}
+
+.core {
+    border-color: #a83bd1;
+}
+
+.nickname {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.realname {
+    color: #888;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.role {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 6px 10px;
+    border: 1px solid #a83bd1;
+    color: #d58aff;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 25px;
+    border: 1px solid #a83bd1;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #a83bd1;
+    box-shadow: 0 0 20px #a83bd1;
+}
+
+.back {
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+footer {
+    padding: 30px;
+    text-align: center;
+    color: #555;
+    border-top: 1px solid #32103f;
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
     }
 
-    h1 {
-        font-size: 45px;
-        letter-spacing: 5px;
+    nav {
+        gap: 12px;
     }
 
-    .player {
-        background: #220033;
-        border: 1px solid #6a008f;
-        padding: 20px;
-        margin: 15px auto;
-        max-width: 400px;
+    section {
+        padding-left: 20px;
+        padding-right: 20px;
     }
-
-    .player h2 {
-        margin: 0 0 8px;
-    }
-
-    .player p {
-        color: #aaa;
-    }
+}
 </style>
+</head>
 
-</head><body><h1>THE CORE</h1>
+<body>
 
-<div class="player">
-    <h2>Joshien</h2>
-    <p>Captain</p>
+<header>
+
+<div class="logo">NØV3X</div>
+
+<nav>
+<a href="index.html">HOME</a>
+<a href="players.html">TEAM</a>
+<a href="scrims.html">SCRIMS</a>
+<a href="join.html">JOIN US</a>
+</nav>
+
+</header>
+
+
+<div class="hero">
+
+<h1>THE CORE</h1>
+
+<p>ONE SQUAD. ONE FATE.</p>
+
 </div>
 
-<div class="player">
-    <h2>Jurist</h2>
-    <p>Assault</p>
+
+<!-- FEATURED CORE -->
+
+<section>
+
+<h2 class="section-title">FEATURED CORE</h2>
+
+<div class="cards">
+
+<div class="card core">
+<div class="nickname">JETHRO</div>
+<div class="realname">NV3 Yosh mƤz</div>
+<div class="role">ASSAULT</div>
 </div>
 
-<div class="player">
-    <h2>Rhenz</h2>
-    <p>Support</p>
+<div class="card core">
+<div class="nickname">JOSHIEN</div>
+<div class="realname">NV3 Miyuki mƤz</div>
+<div class="role">TEAM CAPTAIN</div>
 </div>
 
-<div class="player">
-    <h2>Jethro</h2>
-    <p>Sniper</p>
+<div class="card core">
+<div class="nickname">JURIST</div>
+<div class="realname">NV3 Ash mƤz</div>
+<div class="role">SUPPORT</div>
 </div>
+
+</div>
+
+</section>
+
+
+<!-- FULL TEAM -->
+
+<section>
+
+<h2 class="section-title">FULL TEAM</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="nickname">NV3 Bayla JK</div>
+<div class="realname">Aljames Bayla</div>
+</div>
+
+<div class="card">
+<div class="nickname">NV3 Chris ØVD</div>
+<div class="realname">Christian Merwin Ortigoza</div>
+</div>
+
+<div class="card">
+<div class="nickname">NV3 Rence JK</div>
+<div class="realname">Clarence Gilbuena</div>
+</div>
+
+<div class="card">
+<div class="nickname">NV3 Dave ØVD</div>
+<div class="realname">Dave Lorence Oreta</div>
+</div>
+
+<div class="card">
+<div class="nickname">NV3 Jeo ØVD</div>
+<div class="realname">Jeoffred de La Fuente</div>
+</div>
+
+<div class="card">
+<div class="nickname">NV3 Kev mƤz</div>
+<div class="realname">John Kevin D. Dumdum</div>
+</div>
+
+<div class="card">
+<div class="nickname">NV3 John ØVD</div>
+<div class="realname">Johnrich Palapa</div>
+</div>
+
+<div class="card">
+<div class="nickname">NV3 Kei mƤz</div>
+<div class="realname">Luis Ortigoza</div>
+</div>
+
+<div class="card">
+<div class="nickname">NV3 Supa mƤz</div>
+<div class="realname">Meco Igdanes</div>
+</div>
+
+<div class="card">
+<div class="nickname">NV3 Prince JK</div>
+<div class="realname">Prence Izekiel</div>
+</div>
+
+<div class="card">
+<div class="nickname">NV3 Ralp JK</div>
+<div class="realname">Raphael Adrian Pasia</div>
+</div>
+
+<div class="card">
+<div class="nickname">NV3 ACE ØVD</div>
+<div class="realname">Reyven Esquerra</div>
+</div>
+
+<div class="card">
+<div class="nickname">NV3 Rhenz mƤz</div>
+<div class="realname">Rhenz Angelo Planque</div>
+</div>
+
+<div class="card">
+<div class="nickname">NV3 Ron JK</div>
+<div class="realname">Valdez Ron</div>
+</div>
+
+<div class="card">
+<div class="nickname">NV3 Yman JK</div>
+<div class="realname">Yman Bas</div>
+</div>
+
+</div>
+
+</section>
+
+
+<div class="back">
+
+<a href="index.html" class="btn">← BACK TO HOME</a>
+
+</div>
+
+
+<footer>
+© 2026 NØV3X CORE
+</footer>
 
 </body>
 </html>
